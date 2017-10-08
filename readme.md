@@ -24,11 +24,16 @@ Available parameters
 
 WordPress files are located in publis-folder.
 
+Credentials 
+------------
+
+WP admin account: instantwp / instantwp
+
 Good to know 
 ------------
 
 * This tool IS NOT SUITABLE for production use
-* All data is wiped every time to spin up a new stack
+* If you want to reinstall WordPress just empty public or mysql-data -folder.
 
 Author
 ------
