@@ -1,0 +1,11 @@
+web:
+    build: .
+    container_name: instantwp
+    environment:
+        - INSTANTWP_URL
+        - INSTANTWP_PLUGINS
+    ports:
+        - "80:80"
+    volumes:
+        - ./public/:/var/www/html/
+        - ./mysql-data/:/var/lib/mysql/
