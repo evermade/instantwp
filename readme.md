@@ -1,7 +1,7 @@
 InstantWP
 =========
 
-InstantWP is docker based tool to instantly spin up WordPress site. It's meant rapid prototyping and testing plugins and themes.
+InstantWP is a Docker based tool to instantly spin up a WordPress site. It's meant for rapid prototyping and testing plugins and themes.
 
 Requirements
 ------------
@@ -20,16 +20,16 @@ Available parameters
 -----
 
 * u: Domain
-* p: List of plugins you want to install. Comma separeted list.
+* p: List of plugins you want to install. Comma separated list.
 
-WordPress files are located in publis-folder.
+WordPress files are located in public-folder.
 
-Credentials 
+Credentials
 ------------
 
 WP admin account: instantwp / instantwp
 
-Good to know 
+Good to know
 ------------
 
 * This tool IS NOT SUITABLE for production use
@@ -38,7 +38,7 @@ Good to know
 Author
 ------
 
-Jaakko Alajoki  
+Jaakko Alajoki
 twitter.com/jalajoki
 
 Lisence
