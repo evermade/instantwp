@@ -41,7 +41,7 @@ Author
 Jaakko Alajoki
 twitter.com/jalajoki
 
-Lisence
+License
 -------
 
 GPLv2
