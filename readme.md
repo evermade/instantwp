@@ -21,6 +21,7 @@ Available parameters
 
 * u: Domain
 * p: List of plugins you want to install. Comma separated list.
+* l: Locale ([https://make.wordpress.org/polyglots/teams/](https://make.wordpress.org/polyglots/teams/))
 
 WordPress files are located in public-folder.
 
