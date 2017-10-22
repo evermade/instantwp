@@ -43,7 +43,7 @@ if [ "$INSTANTWP_REINSTALL" = 1 ]; then
     rm -rf /var/www/html/*
 
     # Download WordPress
-    wp core download --allow-root --locale=fi
+    wp core download --allow-root --locale=$INSTANTWP_LOCALE
 
     wp config create --allow-root --dbname=app --dbuser=instantwp --dbpass=instantwp --extra-php <<PHP
 define( 'WP_DEBUG', true );

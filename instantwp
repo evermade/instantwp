@@ -1,22 +1,29 @@
 #/bin/bash
 
 # Capture url parameters from arguments.
-while getopts u:p: option
+while getopts u:p:l: option
 do
     case "${option}"
     in
     u) INSTANTWP_URL=${OPTARG};;
     p) INSTANTWP_PLUGINS=${OPTARG};;
+    l) INSTANTWP_LOCALE=${OPTARG};;
     esac
 done
 
+# If we dont have a locale set from above, default to Finnish
+if [ -z "$INSTANTWP_LOCALE" ]; then
+    INSTANTWP_LOCALE=fi
+fi
+
 export INSTANTWP_URL=$INSTANTWP_URL
 export INSTANTWP_PLUGINS=$INSTANTWP_PLUGINS
+export INSTANTWP_LOCALE=$INSTANTWP_LOCALE
 
 docker stop instantwp
 
-docker-compose build
 docker-compose up
+docker-compose build
 
 
 

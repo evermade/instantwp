@@ -4,6 +4,7 @@ web:
     environment:
         - INSTANTWP_URL
         - INSTANTWP_PLUGINS
+        - INSTANTWP_LOCALE
     ports:
         - "80:80"
     volumes:
