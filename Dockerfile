@@ -1,9 +1,9 @@
-FROM ubuntu:17.10
+FROM ubuntu:18.04
 MAINTAINER Jaakko Alajoki <jaakko@alajoki.fi>
 
 # Install nginx and php
 RUN apt-get update
-RUN apt-get install -y nginx php7.1-fpm php7.1-mysql vim curl
+RUN apt-get install -y nginx php7.2-fpm php7.2-mysql vim curl
 
 # Run nginx as daemon
 RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf

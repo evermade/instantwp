@@ -31,7 +31,7 @@ if [ "$INSTANTWP_REINSTALL" = 1 ]; then
 
     # Start our daemons
     service mysql start
-    service php7.1-fpm start
+    service php7.2-fpm start
 
     # Create database.
     mysql -uroot -e "CREATE DATABASE app;"
@@ -65,7 +65,7 @@ else
 
     # Start our daemons
     service mysql start
-    service php7.1-fpm start
+    service php7.2-fpm start
 
 fi
 

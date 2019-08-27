@@ -22,8 +22,7 @@ export INSTANTWP_LOCALE=$INSTANTWP_LOCALE
 
 docker stop instantwp
 
-docker-compose up
-docker-compose build
+docker-compose up --build
 
 
 
