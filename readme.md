@@ -31,7 +31,7 @@ WP admin account: instantwp / instantwp
 ## Author
 
 Jaakko Alajoki
-twitter.com/jalajoki
+twitter.com/mrjaamo
 
 ## License
 
