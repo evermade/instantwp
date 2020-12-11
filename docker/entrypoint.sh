@@ -73,5 +73,8 @@ else
 
 fi
 
+# Add write permissions to uploads.
+chmod -R 777 /var/www/html/wp-content/uploads/
+
 # Run nginx
 exec nginx
