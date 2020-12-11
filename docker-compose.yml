@@ -1,13 +1,15 @@
-web:
-  build: ./docker
-  container_name: instantwp
-  environment:
-    - INSTANTWP_URL
-    - INSTANTWP_PLUGINS
-    - INSTANTWP_LOCALE
-  ports:
-    - "80:80"
-    - "3306:3306"
-  volumes:
-    - ./public/:/var/www/html/
-    - ./mysql-data/:/var/lib/mysql/
+version: "3"
+services:
+  web:
+    build: ./docker
+    container_name: instantwp
+    environment:
+      - INSTANTWP_URL
+      - INSTANTWP_PLUGINS
+      - INSTANTWP_LOCALE
+    ports:
+      - "80:80"
+      - "3306:3306"
+    volumes:
+      - ./public/:/var/www/html/
+      - ./mysql-data/:/var/lib/mysql/

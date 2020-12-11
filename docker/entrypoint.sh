@@ -8,12 +8,14 @@ if [ "$(ls -A .)" ]; then
     INSTANTWP_REINSTALL=0
 else
     echo "WordPress installation doesn't exist. Force reinstall!"
+    INSTANTWP_REINSTALL=1
 fi
 if [ "$(ls -A /var/lib/mysql/)" ]; then
     echo "MySQL data exists."
     INSTANTWP_REINSTALL=0
 else
     echo "MySQL data files doesn't exist. Force reinstall!"
+    INSTANTWP_REINSTALL=1
 fi
 
 
@@ -30,8 +32,8 @@ if [ "$INSTANTWP_REINSTALL" = 1 ]; then
     mysql_install_db --user=mysql --ldata=/var/lib/mysql/
 
     # Start our daemons
-    service mysql start
-    service php7.2-fpm start
+    service mariadb start
+    service php7.4-fpm start
 
     # Create database.
     mysql -uroot -e "CREATE DATABASE app;"
@@ -61,11 +63,13 @@ PHP
     done
 
 
-else 
+else
+
+    echo "Starting daemons..."
 
     # Start our daemons
-    service mysql start
-    service php7.2-fpm start
+    service mariadb start
+    service php7.4-fpm start
 
 fi
 
