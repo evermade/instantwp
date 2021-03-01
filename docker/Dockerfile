@@ -1,15 +1,15 @@
-FROM ubuntu:21.04
+FROM ubuntu:20.10
 MAINTAINER Jaakko Alajoki <jaakko@alajoki.fi>
 
 # Install nginx and php
-RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y nginx php7.4-fpm php7.4-mysql vim curl
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y nginx php php-cli php-fpm php-json php-common php-mysql php-zip php-gd php-mbstring php-curl php-xml php-pear php-bcmath vim curl
 
 # Run nginx as daemon
 RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
 
 # Install mariadb (with empty root password)
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mariadb-server
+RUN apt-get update && apt-get -y install mariadb-server
 
 # Add out local configs in.
 ADD default /etc/nginx/sites-available/

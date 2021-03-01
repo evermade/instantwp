@@ -32,7 +32,7 @@ if [ "$INSTANTWP_REINSTALL" = 1 ]; then
     mysql_install_db --user=mysql --ldata=/var/lib/mysql/
 
     # Start our daemons
-    service mariadb start
+    service mysql start
     service php7.4-fpm start
 
     # Create database.
@@ -68,13 +68,16 @@ else
     echo "Starting daemons..."
 
     # Start our daemons
-    service mariadb start
+    service mysql start
     service php7.4-fpm start
 
 fi
 
 # Add write permissions to uploads.
+mkdir -p /var/www/html/wp-content/uploads/
 chmod -R 777 /var/www/html/wp-content/uploads/
+
+echo "All done! Now open your browser :)"
 
 # Run nginx
 exec nginx
