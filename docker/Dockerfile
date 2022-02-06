@@ -21,6 +21,12 @@ RUN bash -c "curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/ph
 RUN bash -c "chmod +x wp-cli.phar"
 RUN bash -c "mv wp-cli.phar /usr/local/bin/wp"
 
+# Install composer
+RUN bash -c "curl https://getcomposer.org/installer -o /composer-setup.php"
+RUN bash -c "chmod +x /composer-setup.php"
+RUN bash -c "php /composer-setup.php"
+RUN bash -c "mv /composer.phar /usr/local/bin/composer"
+
 WORKDIR /var/www/html/
 
 # Start daemons.
