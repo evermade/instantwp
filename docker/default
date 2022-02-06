@@ -62,6 +62,8 @@ server {
 		# fastcgi_pass 127.0.0.1:9000;
 	}
 
+	client_max_body_size 256M;
+
 	# deny access to .htaccess files, if Apache's document root
 	# concurs with nginx's one
 	#
