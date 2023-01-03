@@ -1,9 +1,9 @@
-FROM ubuntu:20.10
+FROM ubuntu:20.04
 MAINTAINER Jaakko Alajoki <jaakko@alajoki.fi>
 
 # Install nginx and php
 ARG DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get install -y nginx php php-cli php-fpm php-json php-common php-mysql php-zip php-gd php-mbstring php-curl php-xml php-pear php-bcmath vim curl
+RUN apt-get update && apt-get install -y nginx php php-cli php-fpm php-json php-sqlite3 php-common php-mysql php-zip php-gd php-mbstring php-curl php-xml php-pear php-bcmath vim curl
 
 # Run nginx as daemon
 RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
