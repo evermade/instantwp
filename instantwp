@@ -1,5 +1,13 @@
 #/bin/bash
 
+# Handle cleanup command.
+if [ "$1" = "clean" ]; then
+    echo "Cleaning up WordPress..."
+    rm -rf ./mysql-data/*
+    rm -rf ./public/*
+    exit
+fi
+
 # Capture url parameters from arguments.
 while getopts u:p:l: option
 do
@@ -14,6 +22,11 @@ done
 # If we dont have a locale set from above, default to Finnish
 if [ -z "$INSTANTWP_LOCALE" ]; then
     INSTANTWP_LOCALE=fi
+fi
+
+# If domain us not set default to local ip
+if [ -z "$INSTANTWP_URL" ]; then
+    INSTANTWP_URL=127.0.0.1
 fi
 
 export INSTANTWP_URL=$INSTANTWP_URL
