@@ -80,7 +80,7 @@ fi
 mkdir -p /var/www/html/wp-content/uploads/
 chmod -R 777 /var/www/html/wp-content/uploads/
 
-echo "All done! Now open your browser :)"
+echo "All done! Now open your browser: http://127.0.0.1"
 
 # Run nginx
 exec nginx

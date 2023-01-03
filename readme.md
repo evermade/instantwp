@@ -9,7 +9,7 @@ InstantWP is a Docker based tool to instantly spin up a WordPress site. It's mea
 ## Usage
 
 - Run `./instantwp -u localhost -p bbpress,akismet`
-- Open your browser!
+- Open your browser: http://127.0.0.1
 
 ## Available parameters
 
